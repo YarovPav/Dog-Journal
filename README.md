@@ -14,9 +14,7 @@ flutter pub get
 flutter run
 ```
 
-*Для генерации адаптеров Hive сборщик не требуется — `dog_note.g.dart` создан вручную.*
-
 ## Архитектура
-* **State management**: `flutter_bloc` (Cubit)
-* **Local storage**: `hive / hive_flutter`
-* **Изображения**: `image_picker` + сохранение копии в `ApplicationDocumentsDirectory`
+* **State management**: встроенный `setState` + `FutureBuilder`
+* **Local storage**: `SharedPreferences` (храним заметки как один JSON‑массив)
+* **Изображения**: `image_picker`; фото конвертируется в Base64‑строку и сохраняется вместе с заметкой
